@@ -1,0 +1,27 @@
+{
+	"header": {
+		"search": "Поиск",
+		"home": "Главное",
+		"about": "О нас",
+		"contact": "Контакты"
+	},
+
+	"footer": {
+		"desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum itaque neque.",
+		"nav": "Навигация",
+		"home": "Главное",
+		"about": "О нас",
+		"contact": "Контакты",
+		"contactUs": "Связаться с нами",
+		"address": "213 Ashgabat, Turkmenistan"
+	},
+
+	"product": {
+		"addToCart": "Добавить в корзину",
+		"goToCart": "Перейти в корзину",
+		"shortDesc": "Краткое описание",
+		"tab1": "Все спецификации",
+		"tab2": "Описание",
+		"recProduct": "Похожие товары"
+	}
+}
