@@ -21,10 +21,12 @@ export default defineNuxtConfig({
 		plugins: [tailwindcss()],
 	},
 
-	/* fonts: {
+	fonts: {
 		providers: {
 			fontshare: false,
 			fontsource: false,
+			bunny: false,
+			google: false, // при необходимости
 		},
 		families: [
 			{ name: 'Inter', provider: 'google' },
@@ -33,7 +35,7 @@ export default defineNuxtConfig({
 		defaults: {
 			weights: [400, 500, 700],
 		},
-	}, */
+	},
 
 	i18n: {
 		locales: [
