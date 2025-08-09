@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 		plugins: [tailwindcss()],
 	},
 
-	fonts: {
+	/* fonts: {
 		providers: {
 			fontshare: false,
 			fontsource: false,
@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 		defaults: {
 			weights: [400, 500, 700],
 		},
-	},
+	}, */
 
 	i18n: {
 		locales: [
