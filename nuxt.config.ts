@@ -22,6 +22,10 @@ export default defineNuxtConfig({
 	},
 
 	fonts: {
+		providers: {
+			fontshare: false,
+			fontsource: false,
+		},
 		families: [
 			{ name: 'Inter', provider: 'google' },
 			{ name: 'Roboto', provider: 'google' },
