@@ -1,11 +1,25 @@
+<script setup>
+const config = useRuntimeConfig();
+
+defineProps({
+	promoBanner: {
+		type: Array,
+		default: () => [],
+	},
+});
+</script>
+
 <template>
-	<section class="grid grid-cols-1 lg:grid-cols-2 bg-white">
+	<section
+		v-if="promoBanner.length > 0"
+		class="grid grid-cols-1 lg:grid-cols-2 bg-white"
+	>
 		<!-- Left Section -->
 		<div class="grid-cols-1 md:grid-cols-2">
 			<!-- Top: PlayStation 5 -->
 			<a class="flex bg-gray-100 items-center" href="https://ya.ru/">
 				<NuxtImg
-					src="img/banners/ps5.jpg"
+					:src="`${config.public.apiURL}${promoBanner[0].image}`"
 					class="w-full h-full object-cover object-center"
 					loading="lazy"
 					placeholder
@@ -16,7 +30,7 @@
 			<div class="grid grid-cols-1 md:grid-cols-2">
 				<a class="flex bg-gray-50 items-center" href="https://ya.ru/">
 					<NuxtImg
-						src="img/banners/airPodsMax.jpg"
+						:src="`${config.public.apiURL}${promoBanner[1].image}`"
 						class="w-full h-full object-cover object-center"
 						loading="lazy"
 						placeholder
@@ -27,7 +41,7 @@
 					href="https://ya.ru/"
 				>
 					<NuxtImg
-						src="img/banners/visionPro.jpg"
+						:src="`${config.public.apiURL}${promoBanner[2].image}`"
 						class="w-full h-full object-cover object-center"
 						loading="lazy"
 						placeholder
@@ -42,7 +56,7 @@
 			href="https://ya.ru/"
 		>
 			<NuxtImg
-				src="img/banners/mac.jpg"
+				:src="`${config.public.apiURL}${promoBanner[3].image}`"
 				class="w-full h-full object-cover object-center"
 				loading="lazy"
 				placeholder

@@ -1,15 +1,18 @@
 <script setup>
 import Breadcrumb from '@/components/layout/Breadcrumb.vue';
 import { useCartStore } from '@/stores/cart';
-import axios from 'axios';
 import { ref } from 'vue';
 import * as yup from 'yup';
 
+const config = useRuntimeConfig();
+const { locale } = useI18n();
 const cart = useCartStore();
+const toast = useToast();
+const { post } = useApi();
 
 // Поля
 const form = ref({
-	location: '1',
+	location: 'Ашхабад',
 	isPickup: false,
 	address: '',
 	name: '',
@@ -66,25 +69,45 @@ const submitForm = async () => {
 
 	submitting.value = true;
 	try {
-		const response = await axios.post('/api/contact', form.value);
-		success.value = true;
-		useNuxtApp().$toast.success('Регистрация успешна!');
-		navigateTo('/dashboard');
-		form.value = {
-			name: '',
-			email: '',
-			category: '',
-			option: '',
-			message: '',
+		const sentData = {
+			...form.value,
+			products: cart.cartItems.map(item => ({
+				_id: item._id,
+				name: item.name.ru,
+				quantity: item.quantity,
+				price: item.price,
+			})),
+			totalPrice: cart.sumTotal,
 		};
+
+		await post('/create-order', sentData);
+		success.value = true;
+
+		form.value = {
+			location: 'Ашхабад',
+			isPickup: false,
+			address: '',
+			name: '',
+			phone: '',
+			email: '',
+			comment: '',
+		};
+
+		cart.clearCart();
+
+		toast.success({
+			title: 'Успешно!',
+			message: 'Заказ был успешно создан!',
+			position: 'bottomCenter',
+		});
 	} catch (e) {
 		console.error(e);
 
-		if (e.response) {
-			useNuxtApp().$toast.error(e.response.data.message || 'Ошибка сервера');
-		} else {
-			useNuxtApp().$toast.error('Нет соединения с сервером');
-		}
+		toast.error({
+			title: 'Ошибка!',
+			message: 'Что-то пошло не так, попробуйте позже',
+			position: 'bottomCenter',
+		});
 	} finally {
 		submitting.value = false;
 	}
@@ -108,20 +131,21 @@ const submitForm = async () => {
 
 				<div
 					v-for="item in cart.cartItems"
-					:key="item.id"
+					:key="item._id"
 					class="flex items-center justify-between border-b border-gray-400 py-4"
 				>
 					<div class="flex items-center gap-4">
 						<NuxtImg
-							src="img/ChatGPT.png"
-							:alt="item.name"
+							:src="`${config.public.apiURL}${item.images[0]}`"
 							class="w-24 h-24 object-cover object-center"
 							loading="lazy"
 							placeholder
 						/>
 
-						<NuxtLink :to="$localePath(`/Dinamica/${item.id}`)">
-							<h2 class="font-medium hover:text-sky-700">{{ item.name }}</h2>
+						<NuxtLink :to="$localePath(`/${item._id}`)">
+							<h2 class="font-medium hover:text-sky-700">
+								{{ item.name[locale] }}
+							</h2>
 						</NuxtLink>
 					</div>
 
@@ -129,7 +153,7 @@ const submitForm = async () => {
 						<div class="flex items-center rounded-sm border border-gray-200">
 							<button
 								class="size-10 px-4 leading-10 font-medium text-gray-600 transition hover:opacity-75 cursor-pointer"
-								@click="cart.decreaseQuantity(item.id)"
+								@click="cart.decreaseQuantity(item._id)"
 							>
 								&minus;
 							</button>
@@ -137,16 +161,32 @@ const submitForm = async () => {
 							<span class="font-medium px-2">{{ item.quantity }}</span>
 
 							<button
+								v-if="item.stock > item.quantity"
 								class="size-10 px-4 font-medium leading-10 text-gray-600 transition hover:opacity-75 cursor-pointer"
-								@click="cart.increaseQuantity(item.id)"
+								@click="cart.increaseQuantity(item._id)"
+							>
+								&plus;
+							</button>
+
+							<button
+								v-else
+								class="size-10 px-4 font-medium leading-10 text-gray-600 transition hover:opacity-75 cursor-not-allowed"
+								@click="
+									toast.warning({
+										title: 'Внимание!',
+										message:
+											'Вы достигли максимального количества данного товара',
+										position: 'bottomCenter',
+									})
+								"
 							>
 								&plus;
 							</button>
 						</div>
-						<p class="w-20 text-center font-medium">{{ item.price }} тмт</p>
+						<p class="w-35 text-center font-medium">{{ item.price }} тмт</p>
 						<button
 							class="text-2xl pr-3 cursor-pointer"
-							@click="cart.removeItem(item.id)"
+							@click="cart.removeItem(item._id)"
 						>
 							&times;
 						</button>
@@ -159,9 +199,7 @@ const submitForm = async () => {
 				class="md:w-1/3 w-full mt-10 md:mt-0 border border-gray-400 rounded-lg p-6 h-fit"
 				@submit.prevent="submitForm"
 			>
-				<h2 class="text-xl font-semibold mb-4">
-					Оформление заказа {{ values }}
-				</h2>
+				<h2 class="text-xl font-semibold mb-4">Оформление заказа</h2>
 
 				<!-- Cities -->
 				<div class="mb-4">
@@ -172,13 +210,13 @@ const submitForm = async () => {
 						v-model="form.location"
 						class="w-full border border-gray-400 rounded p-2"
 					>
-						<option value="1" selected>Ашхабад</option>
-						<option value="2">Аркадаг</option>
-						<option value="3">Ахалский велаят</option>
-						<option value="4">Балканский велаят</option>
-						<option value="5">Ташаузский велаят</option>
-						<option value="6">Лебабский велаят</option>
-						<option value="7">Марыйский велаят</option>
+						<option value="Ашхабад" selected>Ашхабад</option>
+						<option value="Аркадаг">Аркадаг</option>
+						<option value="Ахалский велаят">Ахалский велаят</option>
+						<option value="Балканский велаят">Балканский велаят</option>
+						<option value="Ташаузский велаят">Ташаузский велаят</option>
+						<option value="Лебабский велаят">Лебабский велаят</option>
+						<option value="Марыйский велаят">Марыйский велаят</option>
 					</select>
 					<p v-if="errors.location" class="text-red-600 text-sm">
 						{{ errors.location }}
@@ -292,7 +330,7 @@ const submitForm = async () => {
 					<textarea
 						v-model="form.comment"
 						:class="[
-							'w-full border border-gray-400 rounded p-2 focus:outline-none focus:border-sky-500',
+							'w-full border border-gray-400 h-40 rounded p-2 focus:outline-none focus:border-sky-500',
 							errors.comment ? 'border-red-600' : '',
 						]"
 						placeholder="Комментарий к заказу (например, удобное время доставки)"
@@ -315,7 +353,7 @@ const submitForm = async () => {
 					:disabled="submitting"
 					class="w-full bg-black text-white py-3 rounded cursor-pointer transition hover:bg-sky-600 disabled:opacity-50 disabled:cursor-not-allowed"
 				>
-					{{ submitting ? 'Sending...' : 'Submit' }}
+					{{ submitting ? 'Отправка...' : 'Отправить' }}
 				</button>
 			</form>
 		</div>

@@ -1,13 +1,14 @@
 <script setup>
+const config = useRuntimeConfig();
 const containerRef = ref(null);
-const slides = ref([
-	{
-		img: 'img/banners/banner.jpg',
-	},
-	{ img: 'img/banners/mainSlide.jpg' },
 
-	{ img: 'img/banners/mainSlide2.jpg' },
-]);
+defineProps({
+	mainBanner: {
+		type: Array,
+		default: () => [],
+	},
+});
+
 useSwiper(containerRef, {
 	loop: true,
 	autoplay: {
@@ -28,12 +29,23 @@ useSwiper(containerRef, {
 
 <template>
 	<swiper-container ref="containerRef" :init="false" class="aspect-[21/9]">
-		<swiper-slide v-for="(slide, idx) in slides" :key="idx">
+		<swiper-slide v-for="(slide, idx) in mainBanner" :key="idx">
+			<NuxtLink v-if="slide.url != ''" :to="slide.url">
+				<NuxtImg
+					:src="`${config.public.apiURL}${slide.image}`"
+					class="w-full h-full object-cover object-center"
+					loading="lazy"
+					placeholder
+					@error="e => console.error('Image error:', e)"
+				/>
+			</NuxtLink>
 			<NuxtImg
-				:src="slide.img"
+				v-else
+				:src="`${config.public.apiURL}${slide.image}`"
 				class="w-full h-full object-cover object-center"
 				loading="lazy"
 				placeholder
+				@error="e => console.error('Image error:', e)"
 			/>
 		</swiper-slide>
 	</swiper-container>

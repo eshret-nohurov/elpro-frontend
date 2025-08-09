@@ -1,6 +1,8 @@
 <script setup>
 import { useCartStore } from '@/stores/cart';
 const cart = useCartStore();
+const config = useRuntimeConfig();
+const { locale } = useI18n();
 
 defineProps({
 	product: {
@@ -21,7 +23,7 @@ const addToCart = product => {
 		>
 			<!-- Ссылка ограничена границами этой обертки -->
 			<NuxtLink
-				:to="$localePath(`/Dinamica/${product.id}`)"
+				:to="$localePath(`/${product._id}`)"
 				class="absolute inset-0 z-11"
 			></NuxtLink>
 
@@ -30,7 +32,7 @@ const addToCart = product => {
 				<!-- IMAGE -->
 				<div class="w-full aspect-[1/1] mb-4 rounded-lg overflow-hidden">
 					<NuxtImg
-						src="img/ChatGPT.png"
+						:src="`${config.public.apiURL}${product.images[0]}`"
 						:alt="product.name"
 						class="w-full h-full object-cover object-center"
 						loading="lazy"
@@ -42,7 +44,7 @@ const addToCart = product => {
 				<h3
 					class="text-base font-medium mb-2 leading-snug line-clamp-2 h-[3rem]"
 				>
-					{{ product.name }}
+					{{ product.name[locale] }}
 				</h3>
 
 				<!-- PRICE -->
@@ -51,7 +53,7 @@ const addToCart = product => {
 
 			<!-- Кнопка -->
 			<button
-				v-if="!cart.isInCart(product.id)"
+				v-if="!cart.isInCart(product._id)"
 				class="mt-auto inline-block bg-black text-white px-10 py-4 rounded-lg hover:bg-sky-700 duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
 				@click.stop="addToCart(product)"
 			>

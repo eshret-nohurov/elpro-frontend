@@ -1,9 +1,12 @@
 <script setup>
 import { useCartStore } from '@/stores/cart';
+import { useNavStore } from '~/stores/nav';
 const { locale, locales, setLocale } = useI18n();
+
+const navStore = useNavStore();
 const cart = useCartStore();
 
-const url = ref('Dinamica');
+// const url = ref('Dinamica');
 </script>
 
 <template>
@@ -92,45 +95,39 @@ const url = ref('Dinamica');
 			<div
 				class="flex items-center justify-center gap-15 text-white text-base container mx-auto px-4 h-[50px]"
 			>
-				<NuxtLink :to="$localePath(`/${url}`)" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/1.svg" alt="" />
-					Phones
-				</NuxtLink>
+				<div
+					v-for="(cat, idx) in navStore.items.nav"
+					:key="cat.id"
+					class="flex items-center justify-center gap-15"
+				>
+					<NuxtLink
+						v-if="cat.subcategories.length === 0"
+						:to="$localePath(`/category/${cat.url}`)"
+					>
+						{{ cat.name[locale] }}
+					</NuxtLink>
 
-				<div>|</div>
+					<div v-else class="group relative inline-flex justify-center">
+						<div class="cursor-pointer transition-all">
+							{{ cat.name[locale] }}
+						</div>
 
-				<NuxtLink to="/" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/2.svg" alt="" />
-					Phones
-				</NuxtLink>
+						<div
+							class="absolute top-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-1 group-hover:translate-y-0 z-20 mt-1 p-4 bg-sky-500 rounded-xl shadow-xl w-50"
+						>
+							<NuxtLink
+								v-for="subCat in cat.subcategories"
+								:key="subCat.id"
+								:to="$localePath(`/subcategory/${subCat.url}`)"
+								class="font-bold py-2 cursor-pointer block"
+							>
+								{{ subCat.name[locale] }}
+							</NuxtLink>
+						</div>
+					</div>
 
-				<div>|</div>
-
-				<NuxtLink to="/" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/3.svg" alt="" />
-					Phones
-				</NuxtLink>
-
-				<div>|</div>
-
-				<NuxtLink to="/" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/4.svg" alt="" />
-					Phones
-				</NuxtLink>
-
-				<div>|</div>
-
-				<NuxtLink to="/" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/5.svg" alt="" />
-					Phones
-				</NuxtLink>
-
-				<div>|</div>
-
-				<NuxtLink to="/" class="flex items-center gap-2">
-					<img src="/public/img/ico/category/6.svg" alt="" />
-					Phones
-				</NuxtLink>
+					<div v-if="idx != navStore.items.nav.length - 1">|</div>
+				</div>
 			</div>
 		</div>
 	</header>
