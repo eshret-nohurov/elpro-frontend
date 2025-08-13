@@ -196,14 +196,16 @@ onMounted(fetchData);
 						<!-- buttons - start -->
 						<div class="flex gap-8 items-center">
 							<div>
-								<span class="text-xl font-bold text-gray-800 md:text-2xl">
+								<span
+									class="text-lg lg:text-xl font-bold text-gray-800 md:text-2xl"
+								>
 									{{ productPrice }} тмт
 								</span>
 							</div>
 
 							<div
 								v-if="!cart.isInCart(productId)"
-								class="rounded-lg bg-gray-900 px-8 py-3 text-center text-base font-semibold text-white transition duration-300 hover:bg-sky-700 cursor-pointer"
+								class="rounded-lg bg-gray-900 px-3 lg:px-8 py-3 text-center text-sm font-semibold text-white transition duration-300 hover:bg-sky-700 cursor-pointer"
 								@click.stop="addToCart(product)"
 							>
 								{{ $t('product.addToCart') }}
@@ -212,7 +214,7 @@ onMounted(fetchData);
 							<NuxtLink
 								v-else
 								:to="$localePath('/cart')"
-								class="mt-auto inline-block text-gray-900 px-10 py-4 rounded-lg hover:bg-sky-700 hover:text-white border duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
+								class="mt-auto inline-block text-gray-900 px-3 lg:px-10 py-4 rounded-lg hover:bg-sky-700 hover:text-white border duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
 							>
 								{{ $t('product.goToCart') }}
 							</NuxtLink>

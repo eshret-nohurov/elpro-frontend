@@ -6,8 +6,12 @@
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				<div>
 					<!-- LOGO -->
-					<NuxtLink :to="$localePath('/')" class="block w-30">
-						<img src="/public/img/logo/logo-white.png" alt="elpro" />
+					<NuxtLink :to="$localePath('/')" class="flex justify-center sm:block">
+						<img
+							src="/public/img/logo/logo-white.png"
+							alt="elpro"
+							class="w-30"
+						/>
 					</NuxtLink>
 
 					<p

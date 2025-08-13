@@ -119,7 +119,7 @@ const submitForm = async () => {
 		<Breadcrumb />
 
 		<!-- CART -->
-		<div class="container mx-auto p-4 md:flex md:gap-8">
+		<div class="container mx-auto p-4 lg:flex lg:gap-8">
 			<!-- Cart Items -->
 			<div class="flex-1">
 				<h1 class="text-2xl font-semibold mb-2">Корзина</h1>
@@ -132,7 +132,7 @@ const submitForm = async () => {
 				<div
 					v-for="item in cart.cartItems"
 					:key="item._id"
-					class="flex items-center justify-between border-b border-gray-400 py-4"
+					class="flex flex-col lg:flex-row lg:items-center justify-between border-b border-gray-400 py-4 gap-4"
 				>
 					<div class="flex items-center gap-4">
 						<NuxtImg
@@ -196,7 +196,7 @@ const submitForm = async () => {
 
 			<!-- Order Summary -->
 			<form
-				class="md:w-1/3 w-full mt-10 md:mt-0 border border-gray-400 rounded-lg p-6 h-fit"
+				class="lg:w-1/3 w-full mt-10 lg:mt-0 border border-gray-400 rounded-lg p-6 h-fit"
 				@submit.prevent="submitForm"
 			>
 				<h2 class="text-xl font-semibold mb-4">Оформление заказа</h2>
@@ -342,7 +342,7 @@ const submitForm = async () => {
 				</div>
 
 				<!-- TOTAL SUMMA -->
-				<div class="flex justify-between font-semibold text-lg mb-6">
+				<div class="flex lg:justify-between font-semibold text-lg mb-6 gap-2">
 					<span>Итого:</span>
 					<span>{{ cart.sumTotal }} тмт</span>
 				</div>

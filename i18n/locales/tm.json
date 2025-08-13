@@ -1,4 +1,27 @@
 {
-	"welcome": "Hoş geldiňiz",
-	"cart": "Sebet"
+	"header": {
+		"search": "Gözlemek",
+		"home": "Esasy sahypa",
+		"about": "Biz hakda",
+		"contact": "Telefon belgimiz"
+	},
+
+	"footer": {
+		"desc": "",
+		"nav": "Nawigasiýa",
+		"home": "Esasy sahypa",
+		"about": "Biz Hakda",
+		"contact": "Telefon belgimiz",
+		"contactUs": "Biz bilen habarlaşmak",
+		"address": "Älemgoşar (100 Fontan) bazary 109-njy magazin"
+	},
+
+	"product": {
+		"addToCart": "Sebete salmak",
+		"goToCart": "Sebete geçmek",
+		"shortDesc": "Gysgaça maglumat",
+		"tab1": "Hemme harakteristikasy",
+		"tab2": "Düşündiriş",
+		"recProduct": "Meňzeş haryt"
+	}
 }

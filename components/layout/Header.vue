@@ -5,8 +5,6 @@ const { locale, locales, setLocale } = useI18n();
 
 const navStore = useNavStore();
 const cart = useCartStore();
-
-// const url = ref('Dinamica');
 </script>
 
 <template>

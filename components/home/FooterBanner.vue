@@ -10,12 +10,12 @@ defineProps({
 </script>
 
 <template>
-	<NuxtLink v-if="footerBanner.length > 0" class="aspect-[21/9]" to="/">
+	<a class="aspect-[21/9]" :href="`${footerBanner[0].url}`">
 		<NuxtImg
 			:src="`${config.public.apiURL}${footerBanner[0].image}`"
 			class="w-full h-full object-cover object-center"
 			loading="lazy"
 			placeholder
 		/>
-	</NuxtLink>
+	</a>
 </template>

@@ -1,4 +1,27 @@
 {
-	"welcome": "Welcome",
-	"cart": "Cart"
+	"header": {
+		"search": "Search",
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact"
+	},
+
+	"footer": {
+		"desc": "Desc",
+		"nav": "Nav",
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact",
+		"contactUs": "Contact us",
+		"address": "Address"
+	},
+
+	"product": {
+		"addToCart": "Add to çart",
+		"goToCart": "Go to çart",
+		"shortDesc": "Short desc",
+		"tab1": "Tab1",
+		"tab2": "Tab2",
+		"recProduct": "Rec product"
+	}
 }

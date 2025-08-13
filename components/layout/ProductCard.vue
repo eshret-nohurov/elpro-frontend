@@ -54,7 +54,7 @@ const addToCart = product => {
 			<!-- Кнопка -->
 			<button
 				v-if="!cart.isInCart(product._id)"
-				class="mt-auto inline-block bg-black text-white px-10 py-4 rounded-lg hover:bg-sky-700 duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
+				class="mt-auto inline-block bg-black text-white lg:px-10 py-4 rounded-lg hover:bg-sky-700 duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
 				@click.stop="addToCart(product)"
 			>
 				{{ $t('product.addToCart') }}
@@ -63,7 +63,7 @@ const addToCart = product => {
 			<NuxtLink
 				v-else
 				:to="$localePath('/cart')"
-				class="mt-auto inline-block text-sky-500 px-10 py-4 rounded-lg hover:bg-sky-700 hover:text-white border duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
+				class="mt-auto inline-block text-sky-500 lg:px-10 py-4 rounded-lg hover:bg-sky-700 hover:text-white border duration-300 transition cursor-pointer uppercase text-xs font-bold relative z-12"
 			>
 				{{ $t('product.goToCart') }}
 			</NuxtLink>

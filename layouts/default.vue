@@ -1,10 +1,11 @@
 <template>
 	<div class="min-h-screen flex flex-col">
 		<!-- HEADER -->
-		<Header />
+		<Header class="hidden lg:block" />
+		<MobileHeader class="block lg:hidden" />
 
 		<!-- MAIN -->
-		<main class="flex-grow mt-[140px]">
+		<main class="flex-grow mt-[70px] lg:mt-[140px]">
 			<slot />
 		</main>
 
@@ -18,4 +19,5 @@
 <script setup>
 import Footer from '@/components/layout/Footer.vue';
 import Header from '@/components/layout/Header.vue';
+import MobileHeader from '@/components/layout/MobileHeader.vue';
 </script>
