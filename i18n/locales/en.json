@@ -7,13 +7,141 @@
 	},
 
 	"footer": {
-		"desc": "Desc",
+		"desc": "WE BUILD TRUST OVER YEARS, NOT MONTHS",
 		"nav": "Nav",
 		"home": "Home",
 		"about": "About",
 		"contact": "Contact",
 		"contactUs": "Contact us",
-		"address": "Address"
+		"address": "Alemgoshar bazar (100 fontan) 109 shop"
+	},
+
+	"about": {
+		"hero": {
+			"tagline": "ABOUT ELPRO",
+			"title": "Reliable electrical solutions for ambitious projects",
+			"subtitle": "Since 2008 we have been helping developers, retailers and industrial partners build safe infrastructure by selecting proven components, providing engineering support and delivering on time."
+		},
+		"stats": {
+			"experience": {
+				"value": "15+",
+				"label": "Years integrating electrical systems"
+			},
+			"projects": {
+				"value": "1200+",
+				"label": "Completed projects across Central Asia"
+			},
+			"partners": {
+				"value": "50+",
+				"label": "Trusted manufacturing partners"
+			}
+		},
+		"mission": {
+			"title": "Our mission",
+			"description": "We make complex electrical procurement simple by combining a deep product catalog, technical expertise and a commitment to reliable deliveries. Every order is screened by our engineers, ensuring clients receive exactly what their projects require."
+		},
+		"values": {
+			"quality": {
+				"title": "Engineering accuracy",
+				"description": "We double-check specifications, test critical components and document every batch so that systems perform safely from day one."
+			},
+			"support": {
+				"title": "Partnership mindset",
+				"description": "Dedicated account managers stay in touch through delivery, providing documentation, installation tips and rapid replacements if supply chains shift."
+			},
+			"speed": {
+				"title": "Predictable logistics",
+				"description": "Optimised warehouse processes and long-term supplier contracts allow us to align with clients’ construction schedules without compromising on quality."
+			}
+		},
+		"commitment": {
+			"tagline": "WHAT WE STAND FOR",
+			"copy": "We bring together certified electricians, logistics specialists and product analysts to support projects from concept to commissioning.",
+			"cta": "Discuss your challenge"
+		},
+		"milestones": {
+			"title": "Milestones",
+			"description": "A brief journey of how Elpro grew from a local distributor into a full-cycle electrical partner.",
+			"2008": {
+				"title": "Founded to serve local builders",
+				"description": "Opened our first showroom and warehouse, focusing on reliable cabling, lighting and protection devices."
+			},
+			"2014": {
+				"title": "Expanded engineering desk",
+				"description": "Built an in-house team to design switchboards and help customers with specification reviews."
+			},
+			"2019": {
+				"title": "Regional logistics hub",
+				"description": "Automated stock control and launched next-day deliveries across Turkmenistan and neighbouring regions."
+			},
+			"2023": {
+				"title": "Digital procurement platform",
+				"description": "Introduced online catalogues and tracking so clients can monitor availability and shipments in real time."
+			}
+		},
+		"cta": {
+			"title": "Ready to power your next site?",
+			"subtitle": "Send us your bill of materials or project concept and we will assemble a precise, delivery-ready solution.",
+			"action": "Contact the team"
+		}
+	},
+
+	"store": {
+		"hero": {
+			"badge": "Elpro Store",
+			"title": "Welcome to Elpro!",
+			"paragraph1": "The Elpro store is where technology turns into delight.",
+			"paragraph2": "Since 2011 we have been creating a space where Apple technology and the best electronics brands meet immaculate service and personal attention for every customer.",
+			"paragraph3": "Here you don't just buy a device\u2014you choose style, reliability and confidence in quality. We offer original devices, accessories and electronics that inspire and make life more comfortable."
+		},
+		"values": {
+			"title": "Our values",
+			"intro": "We stay loyal to the principles that make Elpro Store a place you want to return to:",
+			"item1": "Experience and reputation proven over the years",
+			"item2": "Professional advice and assistance with choosing",
+			"item3": "Only proven and original products",
+			"item4": "Delivery with care and attention to detail"
+		},
+		"services": {
+			"paragraph1": "Beyond sales we run a professional MacBook and iMac repair service, and our Trade-in program lets you exchange your MacBook or iMac for a new one.",
+			"paragraph2": "The Elpro store is more than a shop\u2014it's a place you look forward to returning to for new impressions and technology that works for you.",
+			"card": {
+				"title": "We're here to help",
+				"description": "If you need advice or support, the Elpro Store team is always ready to find the perfect solution and guide you through every step of your purchase.",
+				"cta": "Contact us"
+			}
+		}
+	},
+
+	"contact": {
+		"hero": {
+			"title": "Contacts",
+			"subtitle": "We are ready to answer your questions and help you choose the right technology."
+		},
+		"phones": {
+			"title": "Phone numbers",
+			"primary": "+99365712600",
+			"secondary": "+99365686890"
+		},
+		"location": {
+			"title": "Location",
+			"address": "Alemgoshar bazar (100 fountains) shop 109"
+		},
+		"hours": {
+			"title": "Working hours",
+			"value": "From 10:00 to 20:00"
+		},
+		"socials": {
+			"title": "Social networks",
+			"hint": "Scan the QR code to open the profile",
+			"instagram": "Instagram",
+			"telegram": "Telegram",
+			"tiktok": "TikTok"
+		},
+		"map": {
+			"title": "Find us on the map",
+			"subtitle": "Alemgoshar bazar (100 fountains) shop 109"
+		}
 	},
 
 	"product": {

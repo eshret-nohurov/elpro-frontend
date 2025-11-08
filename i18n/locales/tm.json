@@ -7,13 +7,141 @@
 	},
 
 	"footer": {
-		"desc": "",
+		"desc": "WE BUILD TRUST OVER YEARS, NOT MONTHS",
 		"nav": "Nawigasiýa",
 		"home": "Esasy sahypa",
 		"about": "Biz Hakda",
 		"contact": "Telefon belgimiz",
 		"contactUs": "Biz bilen habarlaşmak",
-		"address": "Älemgoşar (100 Fontan) bazary 109-njy magazin"
+		"address": "Älemgoşar bazary (100 fontan) 109-njy dukan"
+	},
+
+	"about": {
+		"hero": {
+			"tagline": "ELPRO BARADA",
+			"title": "Uly taslamalar üçin ygtybarly elektrik çözgütleri",
+			"subtitle": "2008-nji ýyldan bäri gurluşykçylara, satyjylara we senagat hyzmatdaşlaryna howpsuz infrastruktura gurmaga ýardam edýäris: barlanylan komponentleri saýlaýarys, inžener goldawyny berýäris we eltip beriş wagtyny berk saklaýarys."
+		},
+		"stats": {
+			"experience": {
+				"value": "15+",
+				"label": "Elektrik ulgamlaryny gurmakdaky ýyllyk tejribe"
+			},
+			"projects": {
+				"value": "1200+",
+				"label": "Merkezi Aziýada tamamlanan taslamalar"
+			},
+			"partners": {
+				"value": "50+",
+				"label": "Ygtybarly önümçilik hyzmatdaşlary"
+			}
+		},
+		"mission": {
+			"title": "Biziň maksadymyz",
+			"description": "Giň katalogy, tehniki bilimi we meýilnamalaşdyrylan logistikany birleşdirip, elektrik satyn almalaryny ýeňilleşdirýäris. Her sargyt inženerlerimiz tarapyndan barlanýar, şonuň üçin müşderiler taslamalary üçin zerur enjamlary alýarlar."
+		},
+		"values": {
+			"quality": {
+				"title": "Inžener takyklygy",
+				"description": "Aýratynlyklary derek barlaýarys, möhüm komponentleri synagdan geçirýäris we her partiýany resmileşdirýäris, ulgamlaryň ilkinji gününden howpsuz işlemegi üçin."
+			},
+			"support": {
+				"title": "Hyzmatdaş düşünjesi",
+				"description": "Şahsy menecerler eltip bermegiň ähli tapgyrlarynda aragatnaşyk saklaýarlar, resminama, gurnama boýunça maslahat berýärler we üýtgeşmelere çalt jogap berýärler."
+			},
+			"speed": {
+				"title": "Durnukly logistika",
+				"description": "Optimallaşdyrylan ammarlarymyz we uzak möhletli üpjün edijiler bilen şertnamalarymyz saýlap alnanlaryň gurluşyk tertipleri bilen deňeşdirilip, hili peseltmän ýerine ýetirilýär."
+			}
+		},
+		"commitment": {
+			"tagline": "BIZIŇ BORJUMYZ",
+			"copy": "Taslamalary pikirdan ulanylyşa çenli goldamak üçin sertifikatly elektrikçilerimizi, logistika hünärmenlerimizi we önüm analitiklerimizi birleşdirýäris.",
+			"cta": "Meseleňiz barada gürleşeliň"
+		},
+		"milestones": {
+			"title": "Esasy tapgyrlar",
+			"description": "Elpro nähili ýerli distribýutordan doly elektrik hyzmatyna öwrüldi – gysgaça taryh.",
+			"2008": {
+				"title": "Gurluşykçylara hyzmat etmek üçin döredildi",
+				"description": "Ilkinji şourumy we ammarı açdyk, kabel, yşyklandyryş we gorag enjamlaryna üns berdik."
+			},
+			"2014": {
+				"title": "Inžener stoluny giňeltdik",
+				"description": "Müşderileriň spesifikasiýalaryny barlamak we panel taslamalaryny taýýarlamak üçin içerki topar döretdik."
+			},
+			"2019": {
+				"title": "Sebitleýin logistika merkezi",
+				"description": "Gor dolanyşygyny awtomatlaşdyrdyk we Türkmenistanda hem-de goňşy sebitlerde ertesi gün eltip berişi ýola goýduk."
+			},
+			"2023": {
+				"title": "Sanly satyn alyş platformasy",
+				"description": "Onlaýn kataloglary we gözegçilik ulgamlaryny girizdik, şonuň bilen müşderiler harydyň bardygyny we eltip beriş ýagdaýyny实时 görüp bilýärler."
+			}
+		},
+		"cta": {
+			"title": "Indiki taslamaňyzy güýjüňiz bilen üpjün etmäge taýýarmy?",
+			"subtitle": "Material sanawyňyzy ýa-da proýektiňiziň pikirini iberiň, biz bolsa takyk we eltip berişe taýýar çözgüdi taýýarlarys.",
+			"action": "Topar bilen habarlaşyň"
+		}
+	},
+
+	"store": {
+		"hero": {
+			"badge": "Elpro dükany",
+			"title": "Elpro hoş geldiňiz!",
+			"paragraph1": "\u00abElpro\u00bb dükany tehnologiýanyň lezzet alýan ýerine öwrülýär.",
+			"paragraph2": "2011-nji ýyldan bäri biz \u201cApple\u201d tehnologiýasyny we iň gowy elektronika brendlerini her bir müşderä arassa hyzmat we üns bilen birleşdirýän giňişlik döredýäris.",
+			"paragraph3": "Bu ýerde diňe bir enjam satyn almarsyňyz \u2014 stili, ygtybarlylygy we hiline ynamy saýlaýarsyňyz. Durmuşy ylham berýän we rahatlaşdyrýan özboluşly enjamlary, esbaplary we elektronikany hödürleýäris."
+		},
+		"values": {
+			"title": "Gymmatlyklarymyz",
+			"intro": "Elpro dükanyny aýratyn edýän ýörelgelerimiz:",
+			"item1": "Köp ýyllaryň dowamynda subut edilen tejribe we abraý",
+			"item2": "Hünär maslahaty we saýlamakda kömek",
+			"item3": "Diňe subut edilen we özboluşly önümler",
+			"item4": "Jikme-jikliklere üns we üns bilen gowşurmak"
+		},
+		"services": {
+			"paragraph1": "Satuwdan başga-da, biziň professional MacBook we iMac abatlaýyş hyzmatymyz bar, şeýle hem Söwda-satuw (Trade-in) programmamyz bar \u2014 MacBook ýa-da iMac-yňyzy täzesine çalşyp bilersiňiz.",
+			"paragraph2": "\u00abElpro\u00bb dükany diňe bir dükan däl, eýsem täze täsirler we siziň üçin işleýän tehnologiýalar üçin gaýdyp gelmek ýakymly ýerdir.",
+			"card": {
+				"title": "Biz kömek üçin ýanyňyzda",
+				"description": "Maslahat ýa-da goldaw zerur bolsa, Elpro dükanynyň topary iň amatly çözgüdi tapmaga we satyn alyşyň her ädiminde ýanyňyzda bolmaga taýýar.",
+				"cta": "Biz bilen habarlaşyň"
+			}
+		}
+	},
+
+	"contact": {
+		"hero": {
+			"title": "Habarlaşmak üçin",
+			"subtitle": "Soraglaryňyza jogap bermäge we dogry tehnologiýany saýlamaga hemişe taýýardyk."
+		},
+		"phones": {
+			"title": "Telefon belgilerimiz",
+			"primary": "+99365712600",
+			"secondary": "+99365686890"
+		},
+		"location": {
+			"title": "Ýerleşýän ýerimiz",
+			"address": "Älemgoşar bazary (100 fontan) 109-njy dukan"
+		},
+		"hours": {
+			"title": "Iş wagty",
+			"value": "10:00-dan 20:00-a çenli"
+		},
+		"socials": {
+			"title": "Sosial ulgamlarymyz",
+			"hint": "Profili açmak üçin QR kody skaneriň",
+			"instagram": "Instagram",
+			"telegram": "Telegram",
+			"tiktok": "TikTok"
+		},
+		"map": {
+			"title": "Kartadaky salgymyz",
+			"subtitle": "Älemgoşar bazary (100 fontan) 109-njy dukan"
+		}
 	},
 
 	"product": {
